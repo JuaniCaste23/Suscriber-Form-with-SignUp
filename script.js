@@ -78,13 +78,15 @@ const revelatePassword = (e) => {
    
     const insertText = document.getElementById('innerhtml');
     
-    if(password.type === 'password'){
+    if(password.type === 'password')
+    {
         password.type = 'text';
         eyeicon.style.backgroundImage = "url('images/visibility_black_24dp.svg')";
         innerhtml.innerHTML = 'Visible';
         innerhtml.style.color = "var(--green)"
     }
-    else{
+    else
+    {
         password.type = 'password';
         eyeicon.style.backgroundImage = "url('images/visibility_off_black_24dp.svg')";
         innerhtml.innerHTML = 'Hidden';
