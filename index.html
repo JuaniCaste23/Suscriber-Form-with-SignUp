@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Intro component with sign up form</title>
+</head>
+<body>
+  <main class="main-container">
+    <section class="section-container">
+      <article class="text-box">
+      <h1 class="text-box__title">Learn to code by <br> watching others</h1>
+
+      <p class="text-box__paragraph">See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+      but understanding how developers think is invaluable.</p> 
+      </article>
+
+      <div class="suscription-container">
+
+        <button class="suscription-container__button box-shadow"><span><strong>Try it free 7 days</strong> then</span> <span>$20/mo. thereafter</span></button>
+
+        <article class="suscription-container__form box-shadow">
+
+          <form method="#" class="card-container-form" id='form'>
+            <div class="input-group">
+              <input type="text" id="fname" placeholder="First Name" name="first name">
+              <i class="input-group__icon"></i>
+              <i class="error-message"></i>
+            </div>
+            <div class="input-group">
+              <input type="text" id="lname" placeholder="Last Name" name="last name">
+              <i class="input-group__icon"></i>
+              <i class="error-message"></i>
+            </div>
+            <div class="input-group">
+              <input type="text" id="email" placeholder="Email Address" name="email">
+              <i class="input-group__icon"></i>
+              <i class="error-message"></i>
+            </div>
+            <div class="input-group">
+              <input type="password" id="password" placeholder="Password" name="password">
+              <i class="input-group__icon"></i>
+              <i class="error-message"></i>
+              <i class="eye-icon"></i>
+              <p class="eye-icon_text">Password: <span id="innerhtml">Hidden</span></p>
+            </div>
+            </br>
+            <button type="submit" class="card-container-form__button">Claim your free trial</button>
+
+          </form>
+
+          <p class="card-container-form__paragraph">
+          By clicking the button, you are agreeing to our <a href="#">Terms and Services</a>
+          </p>
+        
+        </article>
+      </div>
+  
+    </section>
+  </main>
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/JuaniCaste23" target="_blank">JuaniCaste23</a>.
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
