@@ -7,6 +7,8 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const eyeicon = document.querySelector('.eye-icon');
 
+console.log(form); //probando si andan las variables
+
 /*funciones*/
 
 //funcion que demuestra que el input fue ingresado equivocadamente
@@ -31,18 +33,19 @@ const showSuccess = (input) => {
     
 };
 
-//funcion que onvierte texto a uppercase
+//funcion que convierte texto a uppercase
 const getFieldName = (input) => {
     
     const name = input.name;
-    return name.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
+    return name.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))); //se uso una expresion regular para convertir a uppercase.
     
 };
 
 //funcion que valida email
 const checkEmail = (input) => {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
+    //se uso una expresion regular para validar el email.
+    
     if( re.test(input.value.trim()) ) 
     {
         showSuccess(input);
