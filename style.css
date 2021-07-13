@@ -17,10 +17,6 @@
     padding: 0;
 }
 
-::-webkit-scrollbar { /*Quita el scroll de los navegadores*/
-    display:none;
-}
-
 html {
     font-family: var(--font-poppins);
     font-size: 62.5%;
