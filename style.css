@@ -73,6 +73,7 @@ strong {
 
 .suscription-container {
     max-width: 600px;
+    min-width: 320px;
 }
 
 .suscription-container__button {
@@ -112,7 +113,7 @@ strong {
     background-color: var(--just-white);
     padding: 20px;
     margin-bottom: 35px;
-    min-width: 350px;
+    min-width: 320px;
 }
 
 .card-container-form input {
