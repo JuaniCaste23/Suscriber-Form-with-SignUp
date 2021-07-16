@@ -129,7 +129,7 @@ strong {
 
 .card-container-form input:focus {
     outline: none;
-    border: solid 1px var(--blue);
+    border: solid 2px var(--blue);
 }
 
 .input-group {
@@ -151,7 +151,6 @@ strong {
 
 #form .input-error {
     border: 2px solid var(--red);
-    color: var(--red);
 }
 
 .error-message {
@@ -161,6 +160,10 @@ strong {
     font-weight: 500;
     margin-top: 4px;
     text-align: right;
+}
+
+.placeholder::-webkit-input-placeholder { /*Permite cambiar elementos del placeholder, gracias a webkit*/
+    color: var(--red);
 }
 
 .eye-icon {
