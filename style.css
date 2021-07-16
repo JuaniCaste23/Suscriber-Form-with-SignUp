@@ -281,6 +281,10 @@ strong {
         line-height: 5.6rem;
         margin-bottom: 30px;
     }
+    
+    .suscription-container {
+        min-width: auto;
+    }
 
     .suscription-container__button {
         font-size: 1.9rem;
