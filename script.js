@@ -19,8 +19,8 @@ const showError = (input, message) => {
     
     input.classList.add('input-error');
     input.removeAttribute('placeholder');
-    formControl.children[1].style.display = "block";
-    formControl.children[2].style.display = "block";
+    formControl.children[1].style.display = "block"; //input-group__icon
+    formControl.children[2].style.display = "block"; //error-message
     formControl.children[2].innerText = message;
     
 };
@@ -54,11 +54,13 @@ const checkEmail = (input) => {
     if( re.test(input.value.trim()) ) 
     {
         showSuccess(input);
+        input.classList.remove('placeholder');
     } 
     else 
     {
         showError(input, 'Looks like this is not an email');
-        input.value = "email@example.com";
+        input.classList.add('placeholder');
+        input.placeholder = "email@example.com";
     }
 
 };
@@ -86,18 +88,18 @@ const passwordVisible = () => {
     password.type = 'text';
     eyeicon.style.backgroundImage = "url('images/visibility_black_24dp.svg')";
     insertext.innerHTML = 'Visible';
-    insertext.style.color = "var(--green)"
+    insertext.style.color = "var(--green)";
     
-}
+};
 
 const passwordHidden = () => {
     
     password.type = 'password';
     eyeicon.style.backgroundImage = "url('images/visibility_off_black_24dp.svg')";
     insertext.innerHTML = 'Hidden';
-    insertext.style.color = "var(--red)"
+    insertext.style.color = "var(--red)";
     
-}
+};
 
 //funcion que revela la password con el ojito, (las funciones que se llaman fueron declaradas arriba)
 const revelatePassword = (e) => {
@@ -106,7 +108,8 @@ const revelatePassword = (e) => {
     {
         passwordVisible();
     }
-    else{
+    else
+    {
         passwordHidden();
     }
     
