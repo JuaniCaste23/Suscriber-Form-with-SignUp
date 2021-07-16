@@ -6,6 +6,7 @@ const lname = document.getElementById('lname');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const eyeicon = document.querySelector('.eye-icon');
+const insertext = document.getElementById('innerhtml');
 
 console.log(form); //probando si andan las variables
 
@@ -15,6 +16,7 @@ console.log(form); //probando si andan las variables
 const showError = (input, message) => {
     
     const formControl = input.parentElement;
+    
     input.classList.add('input-error');
     input.removeAttribute('placeholder');
     formControl.children[1].style.display = "block";
@@ -27,6 +29,7 @@ const showError = (input, message) => {
 const showSuccess = (input) => {
     
     const formControl = input.parentElement;
+    
     input.classList.remove('input-error');
     formControl.children[1].style.display = 'none';
     formControl.children[2].style.display = 'none';
@@ -37,12 +40,14 @@ const showSuccess = (input) => {
 const getFieldName = (input) => {
     
     const name = input.name;
-    return name.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))); //se uso una expresion regular para convertir a uppercase.
+    return name.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))); 
+    //se uso una expresion regular para convertir a uppercase.
     
 };
 
 //funcion que valida email
 const checkEmail = (input) => {
+    
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     //se uso una expresion regular para validar el email.
     
@@ -53,7 +58,7 @@ const checkEmail = (input) => {
     else 
     {
         showError(input, 'Looks like this is not an email');
-        input.value = "email@example/com";
+        input.value = "email@example.com";
     }
 
 };
@@ -76,24 +81,33 @@ const checkRequired = ( inputArr ) => {
     });
 };
 
-//funcion que revela la password con el ojito, y tiene un innerhtml
+const passwordVisible = () => {
+    
+    password.type = 'text';
+    eyeicon.style.backgroundImage = "url('images/visibility_black_24dp.svg')";
+    insertext.innerHTML = 'Visible';
+    insertext.style.color = "var(--green)"
+    
+}
+
+const passwordHidden = () => {
+    
+    password.type = 'password';
+    eyeicon.style.backgroundImage = "url('images/visibility_off_black_24dp.svg')";
+    insertext.innerHTML = 'Hidden';
+    insertext.style.color = "var(--red)"
+    
+}
+
+//funcion que revela la password con el ojito, (las funciones que se llaman fueron declaradas arriba)
 const revelatePassword = (e) => {
    
-    const insertText = document.getElementById('innerhtml');
-    
     if(password.type === 'password')
     {
-        password.type = 'text';
-        eyeicon.style.backgroundImage = "url('images/visibility_black_24dp.svg')";
-        innerhtml.innerHTML = 'Visible';
-        innerhtml.style.color = "var(--green)"
+        passwordVisible();
     }
-    else
-    {
-        password.type = 'password';
-        eyeicon.style.backgroundImage = "url('images/visibility_off_black_24dp.svg')";
-        innerhtml.innerHTML = 'Hidden';
-        innerhtml.style.color = "var(--red)"
+    else{
+        passwordHidden();
     }
     
 };
@@ -104,6 +118,8 @@ const functionForm = (e) => {
     e.preventDefault();
     checkRequired([fname, lname, email, password]);
     checkEmail(email);
+    //queda la password en modo hidden
+    passwordHidden();
     
 };
 
