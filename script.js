@@ -65,15 +65,14 @@ const checkEmail = (input) => {
 
 };
 
-//funcion que valida los input con las funciones showError y showSuccess
+//funcion que valida los input con las funciones showError y showSuccess, recorre el array de los input y los va verificando.
 const checkRequired = ( inputArr ) => {
 
     inputArr.forEach( input => {
         
         if ( input.value.trim() === '') 
         {
-            showError(input, `${getFieldName(input)} cannot be empty`);
-            password.type = 'password';
+            showError(input, `${getFieldName(input)} cannot be empty`); //agrega el nombre del input a arreglar (convertido a uppercase) y el msj de empty, abajo del input junto a su icono rojo de error.
         } 
         else 
         {
