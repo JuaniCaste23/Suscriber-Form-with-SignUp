@@ -21,7 +21,7 @@ html {
     font-family: var(--font-poppins);
     font-size: 62.5%;
     width: 100%;
-    min-width: 375px;
+    min-width: 320px;
 }
 
 body {
