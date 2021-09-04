@@ -86,6 +86,7 @@ const passwordVisible = () => {
     
     password.type = 'text';
     eyeicon.style.backgroundImage = "url('images/visibility_black_24dp.svg')";
+    eyeicon.style.transition = "1s";
     insertext.innerHTML = 'Visible';
     insertext.style.color = "var(--green)";
     
@@ -95,6 +96,7 @@ const passwordHidden = () => {
     
     password.type = 'password';
     eyeicon.style.backgroundImage = "url('images/visibility_off_black_24dp.svg')";
+    eyeicon.style.transition = "800ms";
     insertext.innerHTML = 'Hidden';
     insertext.style.color = "var(--red)";
     
