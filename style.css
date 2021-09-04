@@ -177,6 +177,7 @@ strong {
     left: 1px;
     top: 55px;
     cursor: pointer;
+    transition: 1s;
 }
 
 .eye-icon_text{
@@ -189,7 +190,7 @@ strong {
 #innerhtml{
     position: absolute;
     bottom: 0.2%;
-    left: 58px;
+    left: 105%;
     font-size: 1.1rem;
     color: var(--red);
     font-weight: 500;
